@@ -1,0 +1,15 @@
+Index: .idea/kape_thana_web.iml
+===================================================================
+diff --git a/.idea/kape_thana_web.iml b/.idea/kape_thana_web.iml
+deleted file mode 100644
+--- a/.idea/kape_thana_web.iml	(revision 9a85a8d9c0458cba25250ef6eb81f0145a155935)
++++ /dev/null	(revision 9a85a8d9c0458cba25250ef6eb81f0145a155935)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="PyDocumentationSettings">
+-    <option name="format" value="PLAIN" />
+-    <option name="myDocStringFormat" value="Plain" />
+-  </component>
+-</module>
+\ No newline at end of file
