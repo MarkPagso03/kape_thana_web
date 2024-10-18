@@ -1,15 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% load static %}
-    <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}" >
-    <title>Title</title>
-</head>
-<body>
-    <h1>
-        hello world, index!
-    </h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block title %}My Site, hello world!{% endblock %}
+{% block content %}
+    <h1>hello, world!</h1>
+{% endblock %}
