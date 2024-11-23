@@ -1,0 +1,7 @@
+Django~=5.1.2
+asgiref~=3.8.1
+djangorestframework~=3.15.2
+legacy~=0.1.7
+pip~=24.3.1
+sqlparse~=0.5.2
+tzdata~=2024.2

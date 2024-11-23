@@ -1,3 +1,7 @@
+:root {
+    --header-height: 4vw;
+}
+
 *{
     font-family: "Montserrat Alternates", sans-serif;
     box-sizing: border-box;
@@ -9,8 +13,9 @@
 .header{
     display: flex;
     justify-content: space-between;
-    padding: 0 100px;
-    height: 80px;
+    padding: 0 8vw;
+    height: var(--header-height);
+    background-color: #7d675b;
 }
 
 .header div{
@@ -19,13 +24,18 @@
     }
 
 .header img{
-    height: 70px;
-    width: 70px;
+    height: 75%;
 }
 
 .header h2{
-    margin-left: 30px;
-}
+    margin-left: 2vw;
+    white-space: no-wrap;
+    color: white;
+    font-family: "DM Serif Display", serif;
+    font-weight: 300;
+    font-size: 1.5vw;
+    letter-spacing: .2vw;
+    }
 
 .header nav{
     display: flex;
@@ -33,14 +43,48 @@
 }
 
 .header nav a{
-    margin: 0 20px;
+    margin: 0 1vw;
     text-decoration: none;
+    color: white;
+    font-size: .9vw;
+    font-family: "DM Serif Display", serif;
+    letter-spacing: .15vw;
 }
 
-/* ----------------------------------------- */
+/* banner ----------------------------------------- */
+.banner {
+    background-image: url('../img/kape-thana_banner.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
 
+.banner h3{
+    font-size: 1.5vw;
+    font-family: Serif;
 
+}
 
+.banner h1{
+    font-size: 8vw;
+    font-family: San-serif;
+    font-weight: 300;
+}
+
+.banner button{
+    border: none;
+    font-size: .8vw;
+    padding: .5vw 2vw;
+    font-weight: 600;
+    color: #623e2a;
+}
 
 
 
@@ -62,7 +106,7 @@ footer{
 }
 
 footer p{
-    margin-left: 120px;
+    margin-left: 10vw;
 }
 
 /* ----------------------------------------  */
