@@ -1,11 +1,18 @@
 {% extends 'layout.html' %}
+{% load static %}
 {% block content %}
     <div class="banner">
         <h3>welcome to</h3>
         <h1>KAPE-THANA<br>BEACH HOUSE</h1>
         <button>LEARN MORE</button>
     </div>
-    <div>
-        <h1>Welcome to your luxurious home away from home</h1>
+    <div class="section_1">
+        <div>
+            <h1>Welcome to your luxurious home away from home</h1>
+            <p>Escape to KAPE-THANA BEACH HOUSE—where paradise meets comfort! Tucked near stunning beaches, our cozy haven offers thoughtfully curated accommodations designed to make your dream getaway a reality. Whether you’re craving peaceful serenity, family fun, or a romantic seaside retreat, we’ve got you covered. With breathtaking ocean views, warm hospitality, and a relaxing vibe, every moment here feels magical. Your perfect beach escape is just a booking away—choose KAPE-THANA BEACH HOUSE and let us turn your vacation into an unforgettable story!</p>
+        </div>
+        <div>
+            <img src="{% static 'home/img/kape-thana_bonFire.jpg'%}" alt="group bon fire" />
+        </div>
     </div>
 {% endblock %}

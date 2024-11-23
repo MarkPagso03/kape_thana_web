@@ -1,5 +1,8 @@
 :root {
-    --header-height: 4vw;
+    --header-height: clamp(4rem, 4vw, 4vw);
+    --color1: #623e2a;
+    --color2: #7d675b;
+    --color3: #e7d3c1;
 }
 
 *{
@@ -9,13 +12,20 @@
     padding: 0;
 }
 
+html{
+    font-size: 12px;
+}
+
 /* header style ------------------------------*/
 .header{
     display: flex;
     justify-content: space-between;
-    padding: 0 8vw;
+    padding-left: clamp(8rem, 8vw, 8vw);
+    padding-right: clamp(8rem, 8vw, 8vw);
     height: var(--header-height);
-    background-color: #7d675b;
+    background-color: rgba(0,0,0, .2);
+    position: absolute;
+    width: 100%;
 }
 
 .header div{
@@ -28,13 +38,13 @@
 }
 
 .header h2{
-    margin-left: 2vw;
+    margin-left: clamp(2rem, 2vw, 2vw);
     white-space: no-wrap;
     color: white;
     font-family: "DM Serif Display", serif;
     font-weight: 300;
-    font-size: 1.5vw;
-    letter-spacing: .2vw;
+    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    letter-spacing: clamp( .2rem, .2vw, .2vw);
     }
 
 .header nav{
@@ -43,12 +53,12 @@
 }
 
 .header nav a{
-    margin: 0 1vw;
+    margin: 0 clamp(1rem, 1vw, 1vw);
     text-decoration: none;
     color: white;
-    font-size: .9vw;
+    font-size: clamp( .9rem, .9vw, .9vw);
     font-family: "DM Serif Display", serif;
-    letter-spacing: .15vw;
+    letter-spacing: clamp(.15rem, .15vw, .15vw);
 }
 
 /* banner ----------------------------------------- */
@@ -57,40 +67,68 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: calc(100vh - var(--header-height));
+    height: 100vh;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+    text-shadow: 0 0 2px black;
 }
 
 .banner h3{
-    font-size: 1.5vw;
+    font-size: clamp(1.3rem, 1.3vw, 1.3vw);
     font-family: Serif;
-
+    letter-spacing: .2vw, ;
 }
 
 .banner h1{
-    font-size: 8vw;
+    font-size: clamp(8rem, 8vw, 8vw);
     font-family: San-serif;
     font-weight: 300;
 }
 
 .banner button{
+    margin-top: 50px;
     border: none;
-    font-size: .8vw;
-    padding: .5vw 2vw;
+    font-size: clamp(.8rem, .8vw, .8vw);
+    padding: clamp(.5rem, .5vw, .5vw) clamp( 2rem, 2vw, 2vw);
     font-weight: 600;
-    color: #623e2a;
+    color: var(--color1);
 }
 
+/* section 1 -----------------------------*/
 
+.section_1 {
+    display: flex;
+    background-color: var(--color3);
+}
 
+.section_1 div{
+    padding: clamp(7rem, 7vw, 7vw)  clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+}
 
+.section_1 h1{
+    font-size: clamp(5rem, 5vw, 5vw);
+    font-family: Sans serif;
+    color: var(--color1);
+}
 
+.section_1 p{
+    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-family: Sans serif;
+    color: var(--color1);
+    text-align: justify;
+    margin-top: clamp(3rem, 3vw, 3vw);
+    line-height: clamp(2rem, 2vw, 2vw);
+}
 
+.section_1 img{
+    margin-top: clamp(7rem, 7vw, 7vw);
+    height: clamp(20rem, 20vw, 20vw);
+    border-radius: clamp(2rem, 2vw, 2vw);
+}
 
 
 
