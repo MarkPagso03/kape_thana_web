@@ -1,1 +1,6 @@
 venv/
+/.idea/.gitignore
+/.idea/kape_thana_web.iml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/misc.xml
+/.idea/vcs.xml
