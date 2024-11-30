@@ -129,7 +129,6 @@ html{
     height: clamp(20rem, 20vw, 20vw);
     border-radius: clamp(2rem, 2vw, 2vw);
 }
-
 /* section 2 -----------------------------*/
 .section_2 {
     display: flex;
@@ -161,6 +160,47 @@ html{
     border-radius: clamp(2rem, 2vw, 2vw);
 }
 
+
+/* section 3 -----------------------------*/
+/* section 3 -----------------------------*/
+.section_3 {
+    display: flex;
+    background-color:  #efebe5;
+
+}
+
+/*  for right-aligned content */
+.section_3 .content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns content (paragraph) to the right */
+    align-items: center; /* Vertically center the content */
+    padding-right: clamp(4rem, 4vw, 4vw); /* Adds some padding to the right */
+}
+
+.section_3 p {
+    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-family: Sans-serif;
+    color: var(--color1);
+    text-align: justify;
+    margin-top: clamp(3rem, 3vw, 3vw);
+    line-height: clamp(2rem, 2vw, 2vw);
+    max-width: 50%; /* Optional: To control the width of the paragraph */
+}
+
+.section_3 .image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Keeps image on the left side */
+    align-items: center;
+    padding: clamp(7rem, 7vw, 7vw);
+}
+
+.section_3 img {
+    margin-top: clamp(7rem, 7vw, 7vw);
+    height: clamp(20rem, 20vw, 20vw);
+    border-radius: clamp(2rem, 2vw, 2vw);
+}
 
 
 /* footer ---------------------------------  */
