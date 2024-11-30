@@ -130,8 +130,36 @@ html{
     border-radius: clamp(2rem, 2vw, 2vw);
 }
 
+/* section 2 -----------------------------*/
+.section_2 {
+    display: flex;
+    background-color: #efebe5; /* Updated background color */
+}
 
+.section_2 div {
+    padding: clamp(7rem, 7vw, 7vw) clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+}
 
+.section_2 h1 {
+    font-size: clamp(5rem, 5vw, 5vw);
+    font-family: Sans-serif;
+    color: var(--color1);
+}
+
+.section_2 p {
+    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-family: Sans-serif;
+    color: var(--color1);
+    text-align: justify;
+    margin-top: clamp(3rem, 3vw, 3vw);
+    line-height: clamp(2rem, 2vw, 2vw);
+}
+
+.section_2 img {
+    margin-top: clamp(7rem, 7vw, 7vw);
+    height: clamp(20rem, 20vw, 20vw);
+    border-radius: clamp(2rem, 2vw, 2vw);
+}
 
 
 
