@@ -206,6 +206,45 @@ html{
     margin: 0; /* Removes extra margin for cleaner layout */
 }
 
+/* section-------------------------------------4 */
+.section_4 {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    background-color: var(--color3);
+}
+
+.section_4 div {
+    padding: clamp(7rem, 7vw, 7vw) clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+}
+
+.section_4 h1 {
+    font-size: clamp(4rem, 4vw, 4vw);
+    font-family: Sans-serif;
+    color: var(--color1);
+    text-align: center; /* Centers the text */
+}
+
+
+/* section---------------------------------------5 */
+.section_5 {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    background-color:#efebe5;
+}
+
+.section_5 div {
+    padding: clamp(7rem, 7vw, 7vw) clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+}
+
+.section_5 h1 {
+     font-size: clamp(4rem, 4vw, 4vw);
+    font-family: Sans-serif;
+    color: var(--color1);
+    text-align: center; /* Centers the text */
+}
+
 /* footer ---------------------------------  */
 
 footer{
