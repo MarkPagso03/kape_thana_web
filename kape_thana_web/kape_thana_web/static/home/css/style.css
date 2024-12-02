@@ -3,6 +3,8 @@
     --color1: #623e2a;
     --color2: #7d675b;
     --color3: #e7d3c1;
+    --fsize18 :  clamp(1.8rem, 1.8vw, 1.8vw);
+    --fsize15 :  clamp(1.5rem, 1.5vw, 1.5vw);
 }
 
 *{
@@ -43,7 +45,7 @@ html{
     color: white;
     font-family: "DM Serif Display", serif;
     font-weight: 300;
-    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-size: var(--fsize15);
     letter-spacing: clamp( .2rem, .2vw, .2vw);
     }
 
@@ -103,6 +105,8 @@ html{
 .section_1 {
     display: flex;
     background-color: var(--color3);
+    min-height: 95vh ;
+
 }
 
 .section_1 div{
@@ -116,7 +120,7 @@ html{
 }
 
 .section_1 p{
-    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-size: var(--fsize15);
     font-family: Sans serif;
     color: var(--color1);
     text-align: justify;
@@ -129,16 +133,22 @@ html{
     height: clamp(20rem, 20vw, 20vw);
     border-radius: clamp(2rem, 2vw, 2vw);
 }
+
+
 /* section 2 -----------------------------*/
 .section_2 {
     display: flex;
     background-color: #efebe5; /* Updated background color */
     position: relative; /* Establish positioning context for the image */
-     min-height: 775.2px;
+    min-height: 95vh ;
 }
 
 .section_2 div {
-    padding: clamp(7rem, 7vw, 7vw) clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+    width: 50%;
+}
+
+.section_2 div:first-child{
+    padding: clamp(7rem, 7vw, 7vw);;
 }
 
 .section_2 h1 {
@@ -148,7 +158,7 @@ html{
 }
 
 .section_2 p {
-    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
+    font-size: var(--fsize15);
     font-family: Sans-serif;
     color: var(--color1);
     text-align: justify;
@@ -157,12 +167,12 @@ html{
 }
 
 .section_2 img {
-    width: 700.7px;
-    height: 775.2px;
     position: absolute; /* Confines the image within .section_2 */
     top: 0; /* Aligns the image to the top */
     right: 0; /* Aligns the image to the right */
     border-radius:0;
+    height: 100%;
+    width: 50%;
 }
 
 
@@ -170,65 +180,106 @@ html{
 .section_3 {
     display: flex;
     background-color: #efebe5;
-    position: relative; /* Allows absolute positioning for child elements */
-    min-height: 775.2px; /* Ensure section is at least as tall as the image */
+    position: relative;
+    height: 95vh ;
 }
 
-.section_3 .image {
-    flex: 1; /* Occupies half of the section width */
-    position: relative; /* Establishes a local positioning context */
+.section_3 div{
+    width: 50%;
 }
 
-.section_3 img {
-    width: 700.7px;
-    height: 775.2px;
-    position: absolute;
-    top: 0; /* Adjusts the vertical positioning */
-    left: 0; /* Aligns the image to the left corner */
-    border-radius: 0; /* Ensures sharp corners */
+.section_3 div:last-child{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.section_3 .content {
-    flex: 1; /* Ensures text occupies one-half of the section */
-    display: flex;
-    justify-content: flex-end; /* Aligns text to the right */
-    align-items: center; /* Centers text vertically */
-    padding: clamp(6rem, 6vw, 6vw) clamp(7rem, 7vw, 7vw); /* Increased padding for more space */
-}
-
-.section_3 p {
-    font-size: clamp(1.5rem, 1.5vw, 1.5vw);
-    font-family: Sans-serif;
+.section_3 p{
+    font-size: var(--fsize18);
+    font-family: Sans serif;
     color: var(--color1);
-    text-align: right;
-    line-height: clamp(2rem, 2vw, 2vw);
-    max-width: 44%; /* Reduced width for more flexibility */
-    margin: 0; /* Removes extra margin for cleaner layout */
+    text-align: justify;
+    line-height: clamp(3rem, 3vw, 3vw);
+    letter-spacing: clamp(.2rem, .2vw, .2vw);
+}
+
+.section_3 img{
+    height: 100%;
+    width: 100%;
 }
 
 /* section-------------------------------------4 */
 .section_4 {
     display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center; /* Centers the content vertically */
     background-color: var(--color3);
+    position: relative;
+    min-height: 80vh;
+    flex-direction: column;
 }
 
-.section_4 div {
-    padding: clamp(7rem, 7vw, 7vw) clamp(4rem, 4vw, 4vw) clamp(7rem, 7vw, 7vw) clamp(9rem, 9vw, 9vw);
+.section_4 > div:first-child {
+    display: flex;
+    justify-content: center;
+    padding-top: clamp(3rem, 3vw, 3vw);
 }
 
-.section_4 h1 {
-    font-size: clamp(4rem, 4vw, 4vw);
+.section_4 > div:first-child h1 {
+    font-family: Sans serif;
+    color: var(--color1);
+    font-size: clamp(3.5rem, 3.5vw, 3.5vw);
+}
+
+.section_4 > div:last-child {
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(5rem, 5vw, 5vw) clamp(12rem, 12vw, 12vw);
+}
+
+.section_4 .review_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+    border: 3px solid #9d7652;
+    border-radius: 20px;
+    width: 28%;
+    padding: clamp(3rem, 3vw, 3vw);
+    background-color: rgba(255,255,255, .5);
+}
+
+.review_container .profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    color: var(--color1);
+}
+
+.review_container .comment h1 {
+    font-size: clamp(3rem, 3vw, 3vw);
+    font-family: Sans-serif;
+    color: #ffce38;
+    text-shadow: .5px .5px .5px black;
+    margin-bottom: 40px;
+}
+
+.review_container .comment p {
+    font-size: var(--fsize15);
     font-family: Sans-serif;
     color: var(--color1);
-    text-align: center; /* Centers the text */
+    text-align: left; /* Centers the text */
 }
 
+.section_4 img{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;;
+}
 
 /* section---------------------------------------5 */
 .section_5 {
     display: flex;
+    flex-direction: column;
     justify-content: center; /* Centers the content horizontally */
     align-items: center; /* Centers the content vertically */
     background-color:#efebe5;
