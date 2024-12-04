@@ -350,9 +350,43 @@ html{
     margin: 10px 0;
 }
 
+.section_6 .image-container {
+    position: relative; /* Required for absolute positioning of the button */
+}
 
+.section_6 .image-container .cta-button {
+    position: absolute;
+    top: 90%; /* Position at the center vertically */
+    left: 50%; /* Position at the center horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the button to the center */
+    background-color: #fff;#623e2a; /* Button background color */
+    color: #623e2a; /* Button text color */
+    border: none; /* Removes the border */
+    padding: clamp(.5rem, .5vw, .5vw) clamp( 2rem, 2vw, 2vw);
+    font-size: 1.2rem; /* Font size for the button text */
+    font-family: Sans-serif; /* Button font family */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for a subtle effect */
 
+}
 
+.section_6 .text-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: center; /* Center-align the text */
+}
+
+.section_6 .text-container .contact-info {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-family: Sans-serif;
+    color: var(--color1);
+    line-height: 1.8;
+}
 
 /* footer ---------------------------------  */
 
