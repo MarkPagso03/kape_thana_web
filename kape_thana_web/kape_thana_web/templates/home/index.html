@@ -4,15 +4,15 @@
     <div class="banner">
         <h3>welcome to</h3>
         <h1>KAPE-THANA<br>BEACH HOUSE</h1>
-        <button>LEARN MORE</button>
+        <button>Book Now</button>
     </div>
     <div class="section_1">
         <div>
             <h1>Welcome to your luxurious home away from home</h1>
-            <p>Escape to KAPE-THANA BEACH HOUSE—where paradise meets comfort! Tucked near stunning beaches, our cozy haven offers thoughtfully curated accommodations designed to make your dream getaway a reality. Whether you’re craving peaceful serenity, family fun, or a romantic seaside retreat, we’ve got you covered. With breathtaking ocean views, warm hospitality, and a relaxing vibe, every moment here feels magical. Your perfect beach escape is just a booking away—choose KAPE-THANA BEACH HOUSE and let us turn your vacation into an unforgettable story!</p>
+            <img src="{% static 'home/img/kape-thana_bonFire.jpg'%}" alt="group bon fire" />
         </div>
         <div>
-            <img src="{% static 'home/img/kape-thana_bonFire.jpg'%}" alt="group bon fire" />
+            <p>Escape to KAPE-THANA BEACH HOUSE—where paradise meets comfort! Tucked near stunning beaches, our cozy haven offers thoughtfully curated accommodations designed to make your dream getaway a reality. Whether you’re craving peaceful serenity, family fun, or a romantic seaside retreat, we’ve got you covered. With breathtaking ocean views, warm hospitality, and a relaxing vibe, every moment here feels magical. Your perfect beach escape is just a booking away—choose KAPE-THANA BEACH HOUSE and let us turn your vacation into an unforgettable story!</p>
         </div>
     </div>
 
@@ -85,11 +85,34 @@
         </div>
     </div>
 
-  <div class="section_5">
-    <div>
-        <h1>Accommodation</h1>
+    <div class="section_5">
+        <div>
+            <h1>Accommodation</h1>
+        </div>
+        <div>
+            <div class="accommodation">
+                <img src="{% static 'home/img/kape-thana_bonFire.jpg' %}">
+                <div>
+                    <h1>Rooms</h1>
+                    <button>View Details</button>
+                </div>
+            </div>
+            <div class="accommodation">
+                <img src="{% static 'home/img/kape-thana_bonFire.jpg' %}">
+                <div>
+                    <h1>Rooms</h1>
+                    <button>View Details</button>
+                </div>
+            </div>
+            <div class="accommodation">
+                <img src="{% static 'home/img/kape-thana_bonFire.jpg' %}">
+                <div >
+                    <h1>Rooms</h1>
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 <div class="section_6">
     <div class="image-container">
@@ -97,16 +120,21 @@
         <button class="cta-button">Book Now</button>
     </div>
     <div class="text-container">
-        <div class="line"></div>
         <h1>Book now, experience the beauty of our staycations like never before</h1>
         <div class="line"></div>
         <p>Embrace the opportunity to disconnect from the digital world. Turn off your phone or put it on silent mode. Limit your use of electronic devices to truly immerse yourself in the present moment.</p>
         <div class="line"></div>
-        <p class="contact-info">
-            Abagatanen, Agno Pangasinan<br />
-            0961 786 7187<br />
-            kapethanabeachhouse@gmail.com
-        </p>
+        <div class="_contact-info">
+            <p class="contact-info"><img src="{% static 'home/img/loc_icon.svg' %}">Abagatanen, Agno Pangasinan</p>
+            <p class="contact-info"><img src="{% static 'home/img/phone_icon.svg' %}">0961 786 7187</p>
+            <p class="contact-info"><img src="{% static 'home/img/email_icon.svg' %}">kapethanabeachhouse@gmail.com</p>
+            <div class="socials">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Facebook-Filled"><circle cx="25" cy="25" r="23" fill="none" stroke="#623e2a" stroke-width="2"></circle> <path d="M39,17h-3c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z" fill="#623e2a"></path></svg></a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Instagram-Filled"><circle cx="25" cy="25" r="23" fill="none" stroke="#623e2a" stroke-width="2"></circle><rect x="12" y="12" width="26" height="26" rx="5" ry="5" fill="none" stroke="#623e2a" stroke-width="3"></rect><circle cx="25" cy="25" r="7" fill="none" stroke="#623e2a" stroke-width="3"></circle><circle cx="32" cy="18" r="2" fill="#623e2a"></circle></svg></a>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Twitter-Filled"><circle cx="25" cy="25" r="23" fill="none" stroke="#623e2a" stroke-width="2"></circle><path d="M38.7,15.2c-1.2,0.5-2.5,0.8-3.8,1c1.4-0.8,2.5-2.2,3-3.8c-1.3,0.7-2.8,1.2-4.3,1.5c-1.3-1.4-3.2-2.2-5.2-2.2 c-4,0-7.2,3.2-7.2,7.2c0,0.6,0.1,1.2,0.2,1.8C15,20.8,11.8,18.3,9.6,15.3c-0.7,1.2-1.1,2.5-1.1,4c0,2.8,1.4,5.3,3.4,6.7 c-1.3-0.1-2.6-0.4-3.7-1c0,0.1,0,0.2,0,0.3c0,3.8,2.7,7.1,6.4,7.8c-0.7,0.2-1.4,0.3-2.2,0.3c-0.5,0-1-0.1-1.5-0.1 c1.1,3.4,4.3,5.9,8.1,5.9c9.7,0,15-8.1,15-15c0-0.2,0-0.4,0-0.6C38.3,15.1,38.5,15.1,38.7,15.2z" fill="#623e2a"></path></svg></a>
+            </div>
+            <button>Tag us your photos!</button>
+        </div>
     </div>
 </div>
 
