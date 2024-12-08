@@ -9,8 +9,8 @@
     <meta http-equiv="Expires" content="0">
 
     {% load static %}
-    <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}?v={{ timestamp }}" >
-    <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style@mobile.css' %}?v={{ timestamp }}" >
+    {% block link %}{% endblock %}
+    <link  rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}?v={{ timestamp }}" >
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
             <a href="services.html">Services</a>
             <a href="about.html">About Us</a>
             <a href="pages.html">Pages</a>
-             <a href="contact.html">Contact Us</a>
+             <a href="/contact_us">Contact Us</a>
         </nav>
     </header>
     {% block content %}{% endblock %}

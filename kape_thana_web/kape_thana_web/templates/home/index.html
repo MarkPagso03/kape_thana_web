@@ -1,5 +1,10 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% block link %}
+    <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}?v={{ timestamp }}" >
+    <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style@mobile.css' %}?v={{ timestamp }}" >
+{% endblock %}
+
 {% block content %}
     <div class="banner">
         <h3>welcome to</h3>

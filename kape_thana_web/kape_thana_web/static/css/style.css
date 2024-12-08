@@ -1,0 +1,46 @@
+/* header style ------------------------------*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 clamp(4rem, 8vw, 8vw);
+    height: var(--header-height);
+    background-color: rgba(0,0,0, .2);
+    position: absolute;
+    width: 100%;
+}
+
+.header div{
+    display: flex;
+    align-items: center;
+    }
+
+.header img{
+    height: 75%;
+}
+
+.header h2{
+    margin-left: clamp(2rem, 2vw, 2vw);
+    white-space: no-wrap;
+    color: white;
+    font-family: "DM Serif Display", serif;
+    font-weight: 300;
+    font-size: var(--fsize15);
+    letter-spacing: clamp( .2rem, .2vw, .2vw);
+    text-shadow: 0 0 1px black;
+    }
+
+.header nav{
+    display: flex;
+    align-items: center;
+}
+
+.header nav a{
+    margin: 0 clamp(1rem, 1vw, 1vw);
+    text-decoration: none;
+    color: white;
+    font-size: clamp( .9rem, .9vw, .9vw);
+    font-family: "DM Serif Display", serif;
+    letter-spacing: clamp(.15rem, .15vw, .15vw);
+    text-shadow: 0 0 1px black;
+}
