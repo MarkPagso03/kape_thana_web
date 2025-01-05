@@ -1,45 +1,72 @@
-{% extends 'layout.html' %}
-{% load static %}
-{% block link %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <link  rel="stylesheet" type="text/css" href="{% static 'booking/css/style.css' %}?v={{ timestamp }}" >
-    <link  rel="stylesheet" type="text/css" href="{% static 'booking/css/style@mobile.css' %}?v={{ timestamp }}" >
-{% endblock %}
-
-{% block content %}
-    <div>
-        <div>
-            <img />
-            <div>
-                <h1>BOOK YOUR STAY</h1>
-                <h2>Check availability</h2>
-                <div>
-                    <div>
-                        <h1>Full Name</h1>
-                        <div>
-                            <input>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div>
-                        <input>
-                        <p></p>
-                    </div>
-                    <div>
-                        <input>
-                        <span></span>
-                    </div>
-                </div>
-
-            </div>
-
+    <title>Kape Thana Beach House</title>
+</head>
+    <div class="container">
+        <div class="branding">
+            <img src="{% static 'booking/img/booking_brand_bg.png' %}">
         </div>
 
+        <div class="form-container">
+            <h2>BOOK YOUR STAY</h2>
+            <form action="submit-form.php" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Mobile Number</label>
+                      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="09XXXXXXXXX" pattern="09\d{9}" maxlength="11" minlength="11" inputmode="numeric" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="guests" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="room">Room No.</label>
+                    <select id="room" name="room" required>
+                        <option value="101">101</option>
+                        <option value="102">102</option>
+                        <option value="103">103</option>
+                        <option value="104">104</option>
+                    </select>
+                </div>
+                <div class="form-footer">
+                    <div class="terms">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                    </div>
+                    <button type="submit">Confirm</button>
+                </div>
+            </form>
+        </div>
     </div>
-
-
-
-
-{% endblock %}
+</body>
+</html>

@@ -57,14 +57,16 @@ html{
     text-shadow: 0 0 2px black;
 }
 
-.banner button{
+.banner button, .banner a{
     margin-top: 50px;
     border: none;
     font-size: var(--fsize8);
     padding: clamp(.5rem, .5vw, .5vw) clamp( 2rem, 2vw, 2vw);
+    background-color: white;
     font-weight: 500;
     color: var(--color1);
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* section 1 -----------------------------*/
@@ -357,7 +359,7 @@ html{
     position: relative; /* Required for absolute positioning of the button */
 }
 
-.section_6 .image-container .cta-button {
+.section_6 .image-container a {
     position: absolute;
     top: 90%; /* Position at the center vertically */
     left: 50%; /* Position at the center horizontally */
@@ -371,7 +373,7 @@ html{
     border-radius: 5px; /* Rounded corners */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds shadow for a subtle effect */
     cursor: pointer;
-
+    text-decoration: none;
 }
 
 .section_6 .text-container {
