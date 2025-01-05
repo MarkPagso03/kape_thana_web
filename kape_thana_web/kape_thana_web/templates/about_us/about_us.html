@@ -1,294 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Kape-Thana</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #efebe5;
-        }
+{% extends 'layout.html' %}
+{% load static %}
+{% block link %}
+    <link  rel="stylesheet" type="text/css" href="{% static 'about_us/css/style.css' %}?v={{ timestamp }}" >
+{% endblock %}
 
-        .hero {
-            position: relative;
-            text-align: center;
-            color: #fff;
-        }
-
-        .hero img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 12rem;
-            margin: 0;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
-
-        .hero p {
-            font-size: 3.75rem;
-            margin: 0;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
-
-        .content {
-            display: flex;
-            gap: 20px;
-            max-width: 1200px;
-            margin: -5px auto;
-            align-items: flex-start;
-            font-family: Merriweather;
-            text-color: #5e5343;
-        }
-
-        .welcome {
-            flex: 2;
-            color: #5e5343;
-
-
-
-        }
-
-        .welcome h2 {
-            font-size: 3.5rem;
-            color: #5e5343;
-            margin-left: -110px;
-            line-height: -200px;
-            font-weight: normal;
-
-        }
-        .welcome h3 {
-            font-size: 4rem;
-            color: #5e5343;
-            margin-left: -110px;
-            letter-spacing: 3px;
-            line-height: -200px;
-            font-weight: normal;
-        }
-
-        .welcome p {
-            font-size: 1.95rem;
-            color: #5e5343;
-            margin-left: -110px;
-            text-align: justify;
-
-        }
-
-        .images {
-             flex: 1;
-            display: flex;
-            flex-direction: column;
-            margin-right: -160px;
-
-        }
-
-        .images img {
-            width: 700px;
-            height: 65vh;
-            object-fit: cover;
-
-        }
-
-        .why-choose-us {
-            background-color: ##efebe5;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .why-choose-us h2 {
-            font-size: 4.5rem;
-            margin-bottom: -15px;
-            margin-top: 10px;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
-
-        .why-choose-us p {
-            font-size: 2.75rem;
-            color: #5e5343;
-            margin-bottom: 200px;
-            margin-top: 10px;
-            font-family: Merriweather;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            flex: 1;
-            max-width: 450px;
-            padding: 10px;
-            border: 5px solid #5e5343;
-            background-color: #efebe5;
-        }
-
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #5e5343;
-        }
-
-        .feature p {
-            font-size: 1.6rem;
-            color: #5e5343;
-            text-align: justify;
-            margin-bottom: 70px;
-            word-spacing: 5px;
-            margin-left: 25px;
-            margin-right: 25px;
-
-        }
-
-        .booking-section {
-
-            text-align: center;
-            padding: 50px 20px;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
-        .booking-section img{
-             width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        .booking-section .booking{
-            position: absolute;
-            top: 10;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .booking-section h2 {
-            font-size: 5rem;
-            margin: 0 0 20px;
-            margin-top: 100px;
-        }
-
-        .booking-section p {
-            font-size: 3rem;
-            margin: 0;
-        }
-
-
-        @media (max-width: 800px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .images {
-                flex-direction: column;
-                align-items: center;
-            }
-.footer {
-            background-color: #6e5b3f;
-            padding: 40px 20px;
-            color: #f5f5f5;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-section {
-            flex: 1;
-            text-align: center;
-        }
-
-        .footer-section h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .footer-section p, .footer-section a {
-            font-size: 1rem;
-            margin: 5px 0;
-            color: #f5f5f5;
-            text-decoration: none;
-        }
-
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-section.logo img {
-            width: 80px;
-            height: auto;
-        }
-
-        .footer-section.socials img {
-            width: 30px;
-            margin: 0 10px;
-        }
-
-        .divider {
-            width: 1px;
-            background-color: #f5f5f5;
-            height: 80px;
-            margin: 0 20px;
-        }
-
-        @media (max-width: 800px) {
-            .footer-container {
-                flex-direction: column;
-            }
-
-            .divider {
-                display: none;
-            }
-
-            .footer-section {
-                margin-bottom: 20px;
-            }
-
-
-
-        }
-    </style>
-</head>
-<body>
-    <div class="hero">
-        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462550765_574863951807111_8296697534806596122_n.png?stp=dst-png_s720x720&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGzcBrqmDZeVaQk-f_NCplEXb7cNP0UvBldvtw0_RS8Gb2PdDYOB99ktYefwRaeEqD8c0ALcQqbSFeuV7Q7J31-&_nc_ohc=23whwcgzyVoQ7kNvgEcNTY1&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE3uum8YhykGfKtAF_f-UUycJsrSBximf5ovAb4L5qwTg&oe=677DBECF" alt="Ocean view">
-        <div class="overlay">
-            <h1>About Us</h1>
-            <p>Kape-Thana</p>
-        </div>
-    </div>
-
+{% block content %}
+<div class="banner">
+    <h1>Contact Us</h1>
+    <h2>at KAPE-THANA BEACH HOUSE</h2>
+</div>
+<div>
     <div class="content">
         <div class="welcome">
             <h2>Welcome Home!</h2>
@@ -334,143 +55,65 @@
             </div>
         <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/466912894_384549118012752_2900075315380923185_n.png?stp=dst-png_s843x403&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGsvrt9F4vtzlXfkk_UE72qahkNgAyxqfxqGQ2ADLGp_FtaSloLY7vOj1nrFf3qADlN7rdT7ePPLFE04uda1D0S&_nc_ohc=3K_O2ECqfJoQ7kNvgHxlUqC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEaJKBZEuD1eEHPDxSJqlng-bIJsDqGvf_6EBkEtKoT2A&oe=677E07A6" alt="Room View">
     </div>
+</div>
 
 
 
+    <div class="section_3">
+    <div>
+        <img src="{% static 'home/img/contact-us_logo.png'%}" alt="Logo">
+    </div>
+<div class="information-container">
+    <!-- Location Section -->
+    <div class="information">
+        <h3>LOCATION</h3>
+        <p>Abagatanen, Agno Pangasinan</p>
+        <p><a href="#">View Map</a></p>
+    </div>
 
-</body>
-</html>
+    <div class="vertical-line"></div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Section</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+    <!-- Quick Links Section -->
+    <div class="quick-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
 
-        .footer {
-            background-color: #5e5343;
-            padding: 40px 20px;
-            color: #f5f5f5;
-        }
+    <div class="vertical-line"></div>
 
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-section {
-            flex: 1;
-            text-align: center;
-            margin: 0 10px;
-            font-family: Merriweather;
-        }
-
-        .footer-section h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-family: Merriweather;
-        }
-
-        .footer-section p, .footer-section a {
-            font-size: 1rem;
-            margin: 5px 0;
-            color: #f5f5f5;
-            text-decoration: none;
-            font-family: Merriweather;
-            line-height: 1.8;
-        }
-
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
-
-        .header-section.logo img {
-            width: 200px;
-            height: auto;
-            display: block;
-            margin: 0 auto 30px;
-            border-radius: 200px;
-        }
-
-        .footer-section.socials img {
-            width: 50px;
-            margin: 0 10px;
-        }
-
-        .divider {
-            width: 1px;
-            background-color: #f5f5f5;
-            height: 150px;
-            margin: 0 20px;
-        }
-
-        @media (max-width: 800px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .divider {
-                display: none;
-            }
-
-            .footer-section {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="footer">
-        <!-- Logo Section -->
-        <div class="header-section logo">
-            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/465823400_469940915727809_7059884225551729057_n.png?stp=dst-png_p480x480&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGQgnm_zPJTiuulMgMJdhAi5DGvcaMbKuLkMa9xoxsq4g9SdwgOB-D3BDik0sm-8exzGwZLJwDopfl4J1rs-27c&_nc_ohc=wEQ7x8PwK4wQ7kNvgFkhepm&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFfhoN--K8bp-lbsgBTKJJmZL1fmqrrznDPzbAW4oYgUw&oe=677E84C3" alt="Logo">
-        </div>
-
-        <div class="footer-container">
-            <!-- Location Section -->
-            <div class="footer-section loc">
-                <h4>Location</h4>
-                <p>Abagatanen, Agno Pangasinan</p>
-                <a href="#">View Map &rarr;</a>
-            </div>
-
-            <!-- Divider -->
-            <div class="divider"></div>
-
-            <!-- Quick Links Section -->
-            <div class="footer-section links">
-                <h4>Quick Links</h4>
-                <a href="#">Home</a><br>
-                <a href="#">Services</a><br>
-                <a href="#">News</a><br>
-                <a href="#">Contact Us</a>
-            </div>
-
-            <!-- Divider -->
-            <div class="divider"></div>
-
-            <!-- Socials Section -->
-            <div class="footer-section socials">
-                <h4>Socials</h4>
-                <a href="#"><img src="https://freepnglogo.com/images/all_img/1730342312_facebook-icon-png.png" alt="Facebook"></a>
-                <a href="#"><img src="https://clipart-library.com/new_gallery/58-580603_twitter-icon-white-transparent-transparent-background-twitter-logo.png" alt="Twitter"></a>
-                <a href="#"><img src="https://static-00.iconduck.com/assets.00/instagram-with-circle-icon-512x512-n0e5s4tp.png" alt="Instagram"></a>
-            </div>
+    <!-- Socials Section -->
+    <div class="social_media">
+        <h3>SOCIALS</h3>
+        <div class="social-icons">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Facebook-Filled">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="#ffffff" stroke-width="2"></circle>
+                    <path d="M39,17h-3c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z" fill="#ffffff"></path>
+                </svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Instagram-Filled">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="#ffffff" stroke-width="2"></circle>
+                    <rect x="12" y="12" width="26" height="26" rx="5" ry="5" fill="none" stroke="#ffffff" stroke-width="3"></rect>
+                    <circle cx="25" cy="25" r="7" fill="none" stroke="#ffffff" stroke-width="3"></circle>
+                    <circle cx="32" cy="18" r="2" fill="#ffffff"></circle>
+                </svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" class="icon icons8-Twitter-Filled">
+                    <circle cx="25" cy="25" r="23" fill="none" stroke="#ffffff" stroke-width="2"></circle>
+                    <path d="M38.7,15.2c-1.2,0.5-2.5,0.8-3.8,1c1.4-0.8,2.5-2.2,3-3.8c-1.3,0.7-2.8,1.2-4.3,1.5c-1.3-1.4-3.2-2.2-5.2-2.2c-4,0-7.2,3.2-7.2,7.2c0,0.6,0.1,1.2,0.2,1.8C15,20.8,11.8,18.3,9.6,15.3c-0.7,1.2-1.1,2.5-1.1,4c0,2.8,1.4,5.3,3.4,6.7c-1.3-0.1-2.6-0.4-3.7-1c0,0.1,0,0.2,0,0.3c0,3.8,2.7,7.1,6.4,7.8c-0.7,0.2-1.4,0.3-2.2,0.3c-0.5,0-1-0.1-1.5-0.1c1.1,3.4,4.3,5.9,8.1,5.9c9.7,0,15-8.1,15-15c0-0.2,0-0.4,0-0.6C38.3,15.1,38.5,15.1,38.7,15.2z" fill="#ffffff"></path>
+                </svg>
+            </a>
         </div>
     </div>
-</body>
-</html>
+</div>
 
+
+</div>
+{% endblock %}
