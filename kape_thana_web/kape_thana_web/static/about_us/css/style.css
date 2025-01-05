@@ -51,169 +51,121 @@
             font-size: var(--fsize10);
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #efebe5;
-        }
+/*------------------------------------------------------ Section 2 ------------------------------*/
 
-        .hero {
-            position: relative;
-            text-align: center;
-            color: #fff;
-        }
+.section_2 {
+    display: flex;
+    background-color: #efebe5; /* Retained original background color */
+    position: relative; /* Establish positioning context for the image */
+}
 
-        .hero img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+.section_2 div {
+    width: 50%;
+}
 
-        .hero .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.section_2 div:first-child {
+    padding: clamp(8.5rem, 10vw, 10vw);
+}
 
-        .hero h1 {
-            font-size: 12rem;
-            margin: 0;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
+.section_2 h1 {
+    font-size: var(--fsize30);
+    font-family: Sans-serif;
+    color: #5e5343; /* Set font color to #5e5343 */
+}
 
-        .hero p {
-            font-size: 3.75rem;
-            margin: 0;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
+.section_2 p {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem); /* Reduced font size slightly */
+    font-family: Sans-serif;
+    color: #5e5343; /* Set font color to #5e5343 */
+    text-align: justify;
+    margin-top: clamp(3rem, 3vw, 3vw);
+    line-height:  1.5;
+}
 
-        .content {
-            display: flex;
-            gap: 20px;
-            max-width: 1200px;
-            margin: -5px auto;
-            align-items: flex-start;
-            font-family: Merriweather;
-            text-color: #5e5343;
-        }
-
-        .welcome {
-            flex: 2;
-            color: #5e5343;
+.section_2 img {
+    position: absolute; /* Confines the image within .section_2 */
+    top: 0; /* Aligns the image to the top */
+    right: 0; /* Aligns the image to the right */
+    border-radius: 0;
+    height: 90%;
+    width: 50%;
+}
 
 
+/*------------------------------------------------------ Why choose us ------------------------------*/
+.why-choose-us {
+    background-color: #efebe5;
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
 
-        }
+.why-choose-us h2 {
+    font-size: 6rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #5e5343;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
 
-        .welcome h2 {
-            font-size: 3.5rem;
-            color: #5e5343;
-            margin-left: -110px;
-            line-height: -200px;
-            font-weight: normal;
+.why-choose-us p {
+    font-size: 2.75rem;
+    color: #5e5343;
+    margin-bottom: 60px; /* Reduced bottom margin for better spacing */
+    margin-top: 20px;
+    font-family: 'Merriweather', serif;
+    line-height: 1.4; /* Increased line-height for readability */
+    max-width: 900px; /* Control text width for better readability */
+    margin-left: auto;
+    margin-right: auto; /* Centered the text block */
+}
 
-        }
-        .welcome h3 {
-            font-size: 4rem;
-            color: #5e5343;
-            margin-left: -110px;
-            letter-spacing: 3px;
-            line-height: -200px;
-            font-weight: normal;
-        }
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Increased gap for better spacing */
+    flex-wrap: wrap;
+    margin-top: 50px; /* Added space above the feature section */
+}
 
-        .welcome p {
-            font-size: 1.95rem;
-            color: #5e5343;
-            margin-left: -110px;
-            text-align: justify;
+.feature {
+    flex: 1;
+    max-width: 450px;
+    padding: 20px;
+    border: 3px solid #5e5343;
+    background-color: #efebe5;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 
-        }
+.feature h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #5e5343;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
 
-        .images {
-             flex: 1;
-            display: flex;
-            flex-direction: column;
-            margin-right: -160px;
+.feature p {
+    font-size: 2rem;
+    color: #5e5343;
+    text-align: justify;
+    margin-bottom: 40px; /* Adjusted bottom margin */
+    word-spacing: 2px; /* Slightly reduced word spacing */
+    line-height: 1.5; /* Improved line height for readability */
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
-        }
 
-        .images img {
-            width: 700px;
-            height: 65vh;
-            object-fit: cover;
-
-        }
-
-        .why-choose-us {
-            background-color: ##efebe5;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .why-choose-us h2 {
-            font-size: 4.5rem;
-            margin-bottom: -15px;
-            margin-top: 10px;
-            color: #5e5343;
-            font-family: Merriweather;
-        }
-
-        .why-choose-us p {
-            font-size: 2.75rem;
-            color: #5e5343;
-            margin-bottom: 200px;
-            margin-top: 10px;
-            font-family: Merriweather;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            flex: 1;
-            max-width: 450px;
-            padding: 10px;
-            border: 5px solid #5e5343;
-            background-color: #efebe5;
-        }
-
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #5e5343;
-        }
-
-        .feature p {
-            font-size: 1.6rem;
-            color: #5e5343;
-            text-align: justify;
-            margin-bottom: 70px;
-            word-spacing: 5px;
-            margin-left: 25px;
-            margin-right: 25px;
-
-        }
-
+/*------------------------------------------------------ Booking section ------------------------------*/
         .booking-section {
-
             text-align: center;
             padding: 50px 20px;
             color: #5e5343;
-            font-family: Merriweather;
+            font-family: 'Sans-serif';
+
         }
         .booking-section img{
              width: 100%;
@@ -245,89 +197,8 @@
         }
 
 
-        @media (max-width: 800px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+/*------------------------------------------------------ Section 3 ------------------------------*/
 
-            .images {
-                flex-direction: column;
-                align-items: center;
-            }
-.footer {
-            background-color: #6e5b3f;
-            padding: 40px 20px;
-            color: #f5f5f5;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-section {
-            flex: 1;
-            text-align: center;
-        }
-
-        .footer-section h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .footer-section p, .footer-section a {
-            font-size: 1rem;
-            margin: 5px 0;
-            color: #f5f5f5;
-            text-decoration: none;
-        }
-
-        .footer-section a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-section.logo img {
-            width: 80px;
-            height: auto;
-        }
-
-        .footer-section.socials img {
-            width: 30px;
-            margin: 0 10px;
-        }
-
-        .divider {
-            width: 1px;
-            background-color: #f5f5f5;
-            height: 80px;
-            margin: 0 20px;
-        }
-        }
-
-        @media (max-width: 800px) {
-            .footer-container {
-                flex-direction: column;
-            }
-
-            .divider {
-                display: none;
-            }
-
-            .footer-section {
-                margin-bottom: 20px;
-            }
-
-
-
-        }
-
-
-/*section 3 */
 .section_3 {
     position: relative; /* Allows for positioning child elements */
     height: 70vh; /*height of the section*/
@@ -445,4 +316,16 @@
 .quick-links a:hover, .information a:hover, .social_media a:hover {
     color: #d4a373;
     text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+footer p {
+    margin-left: 10vw;
+    font-size: var(--fsize8);
 }
