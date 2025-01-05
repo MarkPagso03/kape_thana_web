@@ -307,6 +307,7 @@
             height: 80px;
             margin: 0 20px;
         }
+        }
 
         @media (max-width: 800px) {
             .footer-container {
@@ -344,4 +345,104 @@
     height: auto; /* Maintain aspect ratio */
     margin-bottom: 20px; /* Space between the image and the contact info */
     border-radius: 200px; /* Make the image circular */
+}
+
+/* Information Container */
+.information-container {
+    display: flex;
+    justify-content: space-between; /* Space out sections */
+    align-items: flex-start; /* Align sections at the top */
+    flex-wrap: wrap; /* Wrap sections for smaller screens */
+    max-width: 1200px; /* Restrict container width */
+    width: 100%; /* Ensure the container takes up the full width */
+    font-size: 2rem; /* Adjust font size */
+    line-height: 1.5; /* Adjust line spacing */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Individual Sections */
+.information, .quick-links, .social_media {
+    flex: 1; /* Equal spacing for each section */
+    text-align: center; /* Center-align content */
+    margin: 0 10px; /* Add space between sections */
+    padding: 30px; /* Add padding for spacing */
+    line-height: 1.6; /* Adjust line height within sections */
+}
+
+.quick-links h3 {
+    color: #efebe5; /* Set the color */
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below the heading */
+    text-align: center; /* Center-align the text */
+}
+
+.quick-links ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    text-align: center; /* Centers the list items */
+}
+
+.quick-links li {
+    margin-bottom: 2px; /* Adds spacing between list items */
+}
+
+.information h3 {
+    color: #efebe5; /* Set the color */
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below the heading */
+    text-align: center; /* Center-align the text */
+}
+
+.information p {
+    color: #efebe5; /* Set the color */
+    font-size: 1.5rem; /* Adjust font size */
+    margin-bottom: 8px; /* Space below the paragraph */
+    text-align: center; /* Center-align the text */
+}
+
+/* the SOCIALS section */
+.social_media h3 {
+    color: #efebe5; /* Set the color */
+    font-size: 2rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below the heading */
+    text-align: center; /* Center-align the text */
+}
+
+/* Social Media Icons */
+.social_icons a {
+    margin: 0 10px; /* Add spacing between icons */
+}
+
+.social_icons svg {
+    width: 50px; /* Adjust icon size */
+    height: 50px;
+}
+
+
+
+
+/* Vertical Divider */
+.vertical-line {
+    width: 2px; /* Set the vertical line width */
+    height: 190px; /* Adjust height of the line */
+    background-color: #ffffff; /* Set line color */
+    margin: 0 50px; /* Add space around the line */
+}
+
+/* Links Styling */
+.quick-links a, .information a, .social_media a {
+    color: #efebe5; /* Set link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.9rem; /* Adjust font size */
+    margin: 3px 0; /* Add spacing between links */
+    line-height: 1.9; /* Adjust line height */
+}
+
+.quick-links a:hover, .information a:hover, .social_media a:hover {
+    color: #d4a373;
+    text-decoration: underline;
 }
