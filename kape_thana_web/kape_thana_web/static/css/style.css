@@ -1,3 +1,31 @@
+:root {
+    --header-height: clamp(4rem, 4vw, 4vw);
+    --color1: #623e2a;
+    --color2: #7d675b;
+    --color3: #e7d3c1;
+    --color4: #efebe5;
+    --color5: #efebe5;
+    --fsize18 :  clamp(1.8rem, 1.8vw, 1.8vw);
+    --fsize15 :  clamp(1.5rem, 1.5vw, 1.5vw);
+    --fsize12 :  clamp(1.2rem, 1.2vw, 1.2vw);
+    --fsize10 :  clamp(1rem, 1vw, 1vw);
+    --fsize8  :  clamp(.8rem, .8vw, .8vw);
+    --fsize30 :  clamp(3rem, 3vw, 3vw);
+    --fsize50 :  clamp(5rem, 5vw, 5vw);
+}
+
+*{
+    font-family: "Montserrat Alternates", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 0 2px white;
+}
+
+html{
+    font-size: 9px;
+}
+
 /* header style ------------------------------*/
 
 .header{

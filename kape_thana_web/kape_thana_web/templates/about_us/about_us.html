@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Kape-Thana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #efebe5;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 12rem;
+            margin: 0;
+            color: #5e5343;
+            font-family: Merriweather;
+        }
+
+        .hero p {
+            font-size: 3.75rem;
+            margin: 0;
+            color: #5e5343;
+            font-family: Merriweather;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: -5px auto;
+            align-items: flex-start;
+            font-family: Merriweather;
+            text-color: #5e5343;
+        }
+
+        .welcome {
+            flex: 2;
+            color: #5e5343;
+
+
+
+        }
+
+        .welcome h2 {
+            font-size: 3.5rem;
+            color: #5e5343;
+            margin-left: -110px;
+            line-height: -200px;
+            font-weight: normal;
+
+        }
+        .welcome h3 {
+            font-size: 4rem;
+            color: #5e5343;
+            margin-left: -110px;
+            letter-spacing: 3px;
+            line-height: -200px;
+            font-weight: normal;
+        }
+
+        .welcome p {
+            font-size: 1.95rem;
+            color: #5e5343;
+            margin-left: -110px;
+            text-align: justify;
+
+        }
+
+        .images {
+             flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: -160px;
+
+        }
+
+        .images img {
+            width: 700px;
+            height: 65vh;
+            object-fit: cover;
+
+        }
+
+        .why-choose-us {
+            background-color: ##efebe5;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .why-choose-us h2 {
+            font-size: 4.5rem;
+            margin-bottom: -15px;
+            margin-top: 10px;
+            color: #5e5343;
+            font-family: Merriweather;
+        }
+
+        .why-choose-us p {
+            font-size: 2.75rem;
+            color: #5e5343;
+            margin-bottom: 200px;
+            margin-top: 10px;
+            font-family: Merriweather;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            flex: 1;
+            max-width: 450px;
+            padding: 10px;
+            border: 5px solid #5e5343;
+            background-color: #efebe5;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #5e5343;
+        }
+
+        .feature p {
+            font-size: 1.6rem;
+            color: #5e5343;
+            text-align: justify;
+            margin-bottom: 70px;
+            word-spacing: 5px;
+            margin-left: 25px;
+            margin-right: 25px;
+
+        }
+
+        .booking-section {
+
+            text-align: center;
+            padding: 50px 20px;
+            color: #5e5343;
+            font-family: Merriweather;
+        }
+        .booking-section img{
+             width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .booking-section .booking{
+            position: absolute;
+            top: 10;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .booking-section h2 {
+            font-size: 5rem;
+            margin: 0 0 20px;
+            margin-top: 100px;
+        }
+
+        .booking-section p {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+
+        @media (max-width: 800px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .images {
+                flex-direction: column;
+                align-items: center;
+            }
+.footer {
+            background-color: #6e5b3f;
+            padding: 40px 20px;
+            color: #f5f5f5;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-section h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: #f5f5f5;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section.logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        .footer-section.socials img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: #f5f5f5;
+            height: 80px;
+            margin: 0 20px;
+        }
+
+        @media (max-width: 800px) {
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462550765_574863951807111_8296697534806596122_n.png?stp=dst-png_s720x720&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGzcBrqmDZeVaQk-f_NCplEXb7cNP0UvBldvtw0_RS8Gb2PdDYOB99ktYefwRaeEqD8c0ALcQqbSFeuV7Q7J31-&_nc_ohc=23whwcgzyVoQ7kNvgEcNTY1&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE3uum8YhykGfKtAF_f-UUycJsrSBximf5ovAb4L5qwTg&oe=677DBECF" alt="Ocean view">
+        <div class="overlay">
+            <h1>About Us</h1>
+            <p>Kape-Thana</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="welcome">
+            <h2>Welcome Home!</h2>
+            <h3>KAPE-THANA TRANSIENT HOUSE</h3>
+            <p>
+                Welcome to Kape-Thana, nestled in the heart of Brgy. Abagatanen, Agno. Tucked away in a peaceful setting, our transient house offers the perfect escape from the daily grind.
+            </p>
+            <p>
+                Leave behind the stress of everyday life and immerse yourself in the serene surroundings of our cozy retreat. Whether you’re seeking relaxation or adventure, Kape-Thana is the perfect place to recharge and unwind. With a warm, inviting atmosphere and top-notch amenities, you’ll feel right at home from the moment you arrive. <br>
+                Come, experience tranquility like never before, and let us take care of the rest!
+            </p>
+        </div>
+        <div class="images">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462569699_946190107403167_883565775984463697_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHp_madFavOf2o3R94e3_7wAYBqL0dgsMUBgGovR2CwxcgmYIhCOGzwBywaBQbwlMEFVx1HuVs4zOrGUwhiSgDd&_nc_ohc=0ShbpIuEyd4Q7kNvgFyhnjB&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEwCHSpY_6FywS0CVQZWfGtOArsiHojNldNbRcqciUctg&oe=677DB889" alt="Beach view">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/465698261_600939545778504_6082059506928571386_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeEYgU-uI6a0_XpF_Wi30AaN3s5U6hvNHanezlTqG80dqWuwh-C8F48xZdHF77X9PUs0fy2Wp5rZUkVCyAJ7dLNI&_nc_ohc=6bEf9JMbu7sQ7kNvgFdfvbs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHGhU2TUnwwqvBVjOPrF2TNBxIkWHRDfh-7vWyhnI7o8w&oe=677DBED4" alt="Coastal view">
+        </div>
+    </div>
+
+    <div class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p>Top reasons to choose our homestay</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Perfect Location</h3>
+                <p>Escape the noise and enjoy a peaceful stay in Brgy. Abagatanen, Agno, surrounded by nature and tranquility, yet close to all the essentials.</p>
+            </div>
+            <div class="feature">
+                <h3>Comfort and Convenience</h3>
+                <p>Our rooms are designed for your comfort, featuring modern amenities like Wi-Fi, air conditioning, hot and cold showers, and smart TVs—everything you need for a relaxing stay.</p>
+            </div>
+            <div class="feature">
+                <h3>Affordable and Secure</h3>
+                <p>Enjoy a comfortable stay at competitive rates with secure parking and reliable 24/7 customer support.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="booking-section">
+        <div class="booking">
+                <h2>BOOK YOUR STAY NOW!</h2>
+                <p>CALL US AT</p>
+                <p><strong>0902024568</strong></p>
+            </div>
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/466912894_384549118012752_2900075315380923185_n.png?stp=dst-png_s843x403&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGsvrt9F4vtzlXfkk_UE72qahkNgAyxqfxqGQ2ADLGp_FtaSloLY7vOj1nrFf3qADlN7rdT7ePPLFE04uda1D0S&_nc_ohc=3K_O2ECqfJoQ7kNvgHxlUqC&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEaJKBZEuD1eEHPDxSJqlng-bIJsDqGvf_6EBkEtKoT2A&oe=677E07A6" alt="Room View">
+    </div>
+
+
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Section</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer {
+            background-color: #5e5343;
+            padding: 40px 20px;
+            color: #f5f5f5;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
+            font-family: Merriweather;
+        }
+
+        .footer-section h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-family: Merriweather;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 1rem;
+            margin: 5px 0;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-family: Merriweather;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .header-section.logo img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+            border-radius: 200px;
+        }
+
+        .footer-section.socials img {
+            width: 50px;
+            margin: 0 10px;
+        }
+
+        .divider {
+            width: 1px;
+            background-color: #f5f5f5;
+            height: 150px;
+            margin: 0 20px;
+        }
+
+        @media (max-width: 800px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="footer">
+        <!-- Logo Section -->
+        <div class="header-section logo">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/465823400_469940915727809_7059884225551729057_n.png?stp=dst-png_p480x480&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGQgnm_zPJTiuulMgMJdhAi5DGvcaMbKuLkMa9xoxsq4g9SdwgOB-D3BDik0sm-8exzGwZLJwDopfl4J1rs-27c&_nc_ohc=wEQ7x8PwK4wQ7kNvgFkhepm&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFfhoN--K8bp-lbsgBTKJJmZL1fmqrrznDPzbAW4oYgUw&oe=677E84C3" alt="Logo">
+        </div>
+
+        <div class="footer-container">
+            <!-- Location Section -->
+            <div class="footer-section loc">
+                <h4>Location</h4>
+                <p>Abagatanen, Agno Pangasinan</p>
+                <a href="#">View Map &rarr;</a>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <a href="#">Home</a><br>
+                <a href="#">Services</a><br>
+                <a href="#">News</a><br>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Socials Section -->
+            <div class="footer-section socials">
+                <h4>Socials</h4>
+                <a href="#"><img src="https://freepnglogo.com/images/all_img/1730342312_facebook-icon-png.png" alt="Facebook"></a>
+                <a href="#"><img src="https://clipart-library.com/new_gallery/58-580603_twitter-icon-white-transparent-transparent-background-twitter-logo.png" alt="Twitter"></a>
+                <a href="#"><img src="https://static-00.iconduck.com/assets.00/instagram-with-circle-icon-512x512-n0e5s4tp.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -157,7 +157,7 @@ html{
 }
 
 .section_3 div:last-child{
-    padding: clamp(16rem, 19vw, 19vw) 0 clamp(16rem, 19vw, 19vw) clamp(5rem, 10vw, 10vw);
+    padding: clamp(16rem, 17vw, 17vw) 0 clamp(16rem, 17vw, 17vw) clamp(5rem, 10vw, 10vw);
 }
 
 .section_3 p {

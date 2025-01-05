@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block link %}
+    <link  rel="stylesheet" type="text/css" href="{% static 'booking/css/style.css' %}?v={{ timestamp }}" >
+    <link  rel="stylesheet" type="text/css" href="{% static 'booking/css/style@mobile.css' %}?v={{ timestamp }}" >
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div>
+            <img />
+            <div>
+                <h1>BOOK YOUR STAY</h1>
+                <h2>Check availability</h2>
+                <div>
+                    <div>
+                        <h1>Full Name</h1>
+                        <div>
+                            <input>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <input>
+                        <p></p>
+                    </div>
+                    <div>
+                        <input>
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}
