@@ -64,6 +64,7 @@ html{
     padding: clamp(.5rem, .5vw, .5vw) clamp( 2rem, 2vw, 2vw);
     font-weight: 500;
     color: var(--color1);
+    cursor: pointer;
 }
 
 /* section 1 -----------------------------*/

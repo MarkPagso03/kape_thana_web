@@ -324,3 +324,24 @@
 
 
         }
+
+
+/*section 3 */
+.section_3 {
+    position: relative; /* Allows for positioning child elements */
+    height: 70vh; /*height of the section*/
+    background-color: #5e5343; /* Set background color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 40px 20px; /* Add generous padding */
+}
+
+/* Image */
+.section_3 img {
+    width: 200px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between the image and the contact info */
+    border-radius: 200px; /* Make the image circular */
+}
