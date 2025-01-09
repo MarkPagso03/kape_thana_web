@@ -29,8 +29,8 @@ html{
 /* prompt --------------------------- */
 .confirm_prompt {
             z-index: 2;
-            height: 250px;
-            width: 400px;
+            height: 280px;
+            width: 430px;
             position: fixed;
             left: 50%;
             top: 50%;
@@ -43,6 +43,7 @@ html{
             display: flex;
             flex-direction: column;
             display: none;
+            box-sizing: border-box;
         }
 
         .confirm_prompt div{
@@ -63,6 +64,32 @@ html{
             left: 0;
             display: none;
         }
+
+        .confirm_prompt button, .confirm_prompt .cancel_booking{
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #5b3924;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .confirm_prompt .cancel_booking{
+            text-decoration: none;
+            background-color: #fff;
+            color: #5b3924;
+            border: 1px solid #5b3924;
+        }
+
+         .confirm_prompt h1{
+            font-size: 32px;
+            padding: 20px 0;
+         }
+
+         .confirm_prompt p{
+            font-size: 16px;
+            padding: 20px 0;
+         }
 
 
 /* banner ----------------------------------------- */

@@ -6,9 +6,14 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Check if the success message is set
+            const element1 = document.getElementById("confirm_prompt");
+            const element2 = document.getElementById("gray_block");
             const successMessage = "{{ success|default:'' }}";
             if (successMessage === "success") {
-                alert("Booking successful! Wait for the staff to contact you.");
+                if (element2.style.display === "none" || element2.style.display === "") {
+                    element1.style.display = "flex";
+                    element2.style.display = "block";
+                }
             }
         });
     </script>
@@ -152,14 +157,17 @@
         </div>
     </div>
 </div>
+
+
         <div class="confirm_prompt" id="confirm_prompt">
-                    <h1>Confirm Booking</h1>
-                    <p>by confirming your booking, our staff will contact you through your facebook for more info.</p>
+                    <h1>Booking Successful!</h1>
+                    <p>Wait for our staff to contact you through our facebook ({{fb_username}}), for more detail and confirmation.</p>
                     <div>
-                        <button type="button" >Confirm</button>
+                        <button type="button" onclick="toggle_prompt()">Confirm</button>
                     </div>
         </div>
         <div class="gray_block" id="gray_block"></div>
+
         <script>
             function toggle_prompt() {
                 const element1 = document.getElementById("confirm_prompt");
@@ -174,7 +182,6 @@
                 console.log("toggle_prompt clicked!");
             }
         </script>
-
 
 {% endblock %}
 
