@@ -8,9 +8,5 @@ def index(request):
 def contact_us(request):
     return render(request, "contact_us/contact_us.html", {'timestamp': time.time()})
 
-
-def booking(request):
-    return render(request, "booking/booking.html", {'timestamp': time.time()})
-
 def about_us(request):
     return render(request, "about_us/about_us.html", {'timestamp': time.time()})

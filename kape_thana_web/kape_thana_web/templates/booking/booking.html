@@ -14,33 +14,35 @@
 
         <div class="form-container">
             <h2>BOOK YOUR STAY</h2>
-            <form action="submit-form.php" method="POST">
-                <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p class="form-group">
                     <label for="fullName">Full Name</label>
                     <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-                </div>
+                </p>
 
-                <div class="form-group">
+                <p class="form-group">
                     <label for="email">Mobile Number</label>
-                      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="09XXXXXXXXX" pattern="09\d{9}" maxlength="11" minlength="11" inputmode="numeric" required>
-                </div>
+                      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" pattern="09\d{9}" maxlength="11" minlength="11" inputmode="numeric" required>
+                </p>
 
-                <div class="form-group">
+                <p class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-                </div>
+                </p>
 
 
-                <div class="form-group">
+                <p class="form-group">
                     <label for="checkin">Check-in Date</label>
                     <input type="date" id="checkin" name="checkin" required>
-                </div>
-                <div class="form-group">
+                </p>
+                <p class="form-group">
                     <label for="checkout">Check-out Date</label>
                     <input type="date" id="checkout" name="checkout" required>
-                </div>
-                <div class="form-group">
+                </p>
+                <p class="form-group">
                     <label for="guests">Number of Guests</label>
                     <select id="guests" name="guests" required>
                         <option value="1">1</option>
@@ -48,8 +50,8 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                </div>
-                <div class="form-group">
+                </p>
+                <p class="form-group">
                     <label for="room">Room No.</label>
                     <select id="room" name="room" required>
                         <option value="101">101</option>
@@ -57,12 +59,13 @@
                         <option value="103">103</option>
                         <option value="104">104</option>
                     </select>
-                </div>
+                </p>
                 <div class="form-footer">
-                    <div class="terms">
+                    <p class="terms">
                         <input type="checkbox" id="terms" name="terms" required>
                         <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
-                    </div>
+                    </p>
+                    <a class="cancel_booking" href="/">Cancel</a>
                     <button type="submit">Confirm</button>
                 </div>
             </form>
