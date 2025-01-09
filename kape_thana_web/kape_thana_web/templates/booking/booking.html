@@ -14,35 +14,50 @@
 
         <div class="form-container">
             <h2>BOOK YOUR STAY</h2>
-            <form method="POST">
+            <form method="POST" id="booking_form">
                 {% csrf_token %}
-                {{ form.as_p }}
-                <p class="form-group">
+                <div class="error_container">
+                    {% if errors %}
+                        <ul class="errors">
+                            {% for field, error_list in errors.items %}
+                                {% for error in error_list %}
+                                    <li>{{ field }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <ul class="errors" id="error_list"></ul>
+                </div>
+                <div class="form-group">
                     <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
-                </p>
+                    <input type="text" id="fullName" name="full_name" placeholder="Enter your full name" required>
+                </div>
 
-                <p class="form-group">
+                <div class="form-group">
                     <label for="email">Mobile Number</label>
-                      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" pattern="09\d{9}" maxlength="11" minlength="11" inputmode="numeric" required>
-                </p>
+                      <input type="text" id="mobileNumber" name="mobile_number" placeholder="Enter your mobile number" pattern="09\d{9}" maxlength="11" minlength="11" inputmode="numeric" required>
+                </div>
 
-                <p class="form-group">
+                <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email address" required>
 
-                </p>
+                </div>
 
+                <div class="form-group">
+                    <label for="fb_username">Facebook username</label>
+                    <input type="text" id="fb_username" name="fb_username" placeholder="Enter your facebook username" required>
+                </div>
 
-                <p class="form-group">
-                    <label for="checkin">Check-in Date</label>
-                    <input type="date" id="checkin" name="checkin" required>
-                </p>
-                <p class="form-group">
-                    <label for="checkout">Check-out Date</label>
-                    <input type="date" id="checkout" name="checkout" required>
-                </p>
-                <p class="form-group">
+                <div class="form-group">
+                    <label for="check_in">Check-in Date</label>
+                    <input type="date" id="check_in" name="check_in" required min="{{ today_date }}">
+                </div>
+                <div class="form-group">
+                    <label for="check_out">Check-out Date</label>
+                    <input type="date" id="check_out" name="check_out" required>
+                </div>
+                <div class="form-group">
                     <label for="guests">Number of Guests</label>
                     <select id="guests" name="guests" required>
                         <option value="1">1</option>
@@ -50,26 +65,113 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                </p>
-                <p class="form-group">
+                </div>
+                <div class="form-group">
                     <label for="room">Room No.</label>
-                    <select id="room" name="room" required>
+                    <select id="room" name="room_no" required>
                         <option value="101">101</option>
                         <option value="102">102</option>
                         <option value="103">103</option>
                         <option value="104">104</option>
                     </select>
-                </p>
+                </div>
                 <div class="form-footer">
-                    <p class="terms">
+                    <div class="terms">
                         <input type="checkbox" id="terms" name="terms" required>
-                        <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
-                    </p>
+                        <label for="terms">I agree to the <a href="terms_and_condition" target="_blank">terms and conditions</a></label>
+                    </div>
                     <a class="cancel_booking" href="/">Cancel</a>
-                    <button type="submit">Confirm</button>
+                    <button type="button" onclick="validateForm()">Confirm</button>
+                </div>
+                <div class="confirm_prompt" id="confirm_prompt">
+                    <h1>Confirm Booking</h1>
+                    <p>by confirming your booking, our staff will contact you through your facebook for more info.</p>
+                    <div>
+                        <a class="cancel_booking" onclick="toggle_prompt()">Cancel</a>
+                        <button type="submit" >Confirm</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
+    <div class="gray_block" id="gray_block"></div>
+    <script>
+        function toggle_prompt() {
+            const element1 = document.getElementById("confirm_prompt");
+            const element2 = document.getElementById("gray_block");
+            if (element2.style.display === "none" || element2.style.display === "") {
+                element1.style.display = "flex";
+                element2.style.display = "block";
+            } else {
+                element1.style.display = "none";
+                element2.style.display = "none";
+            }
+            console.log("toggle_prompt clicked!");
+        }
+
+
+        function validateForm() {
+            const form = document.getElementById('booking_form');
+            const errorContainer = document.getElementById('error_list');
+            if (!errorContainer) {
+                console.error("Error container not found!");
+                return;
+            }
+            errorContainer.innerHTML = ''; // Clear previous errors
+
+            let isValid = true; // Assume form is valid initially
+
+            const inputs = form.querySelectorAll('input, select');
+            // Loop through inputs to validate
+            inputs.forEach((input) => {
+                const tooltip = input.nextElementSibling; // Tooltip div
+                if (!input.checkValidity()) {
+                    // If the input is invalid
+                    input.classList.add('error'); // Add error highlight
+                    //tooltip.style.display = 'block'; // Show tooltip
+                    const errorMessage = getErrorMessage(input);
+                    const errorItem = document.createElement('li');
+                    errorItem.textContent = `${input.name}: ${errorMessage}`;
+                    errorContainer.appendChild(errorItem);
+
+                    // Optionally, highlight the invalid field
+                    input.classList.add('error-highlight');
+                    isValid = false; // Mark form as invalid
+                } else {
+                    // If the input is valid
+                    input.classList.remove('error'); // Remove error highlight
+                    //tooltip.style.display = 'none'; // Hide tooltip
+                }
+                    });
+
+                    if (isValid) {
+                        // If all inputs are valid, proceed
+                        console.log("Form is valid. Submitting...");
+                        toggle_prompt()
+                    } else {
+                        console.log("Form has errors. Fix them before submitting.");
+                    }
+                }
+
+        function getErrorMessage(input) {
+            if (input.validity.valueMissing) {
+                return 'This field is required.';
+            } else if (input.validity.typeMismatch) {
+                return 'Invalid input type.';
+            } else if (input.validity.patternMismatch) {
+                return 'Invalid format.';
+            } else if (input.validity.tooShort) {
+                return `Minimum length is ${input.minLength}.`;
+            } else if (input.validity.tooLong) {
+                return `Maximum length is ${input.maxLength}.`;
+            } else if (input.validity.rangeUnderflow) {
+                return `Value must be at least ${input.min}.`;
+            } else if (input.validity.rangeOverflow) {
+                return `Value must be no more than ${input.max}.`;
+            } else {
+                return 'Invalid input.';
+            }
+        }
+    </script>
 </body>
 </html>

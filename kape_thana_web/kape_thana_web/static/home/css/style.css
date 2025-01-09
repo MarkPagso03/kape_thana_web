@@ -26,6 +26,43 @@ html{
     font-size: 9px;
 }
 
+/* prompt --------------------------- */
+.confirm_prompt {
+            z-index: 2;
+            height: 250px;
+            width: 400px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffff;
+            color: #5b3924;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 1px 1px 10px rgb(100,100,100);
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+
+        .confirm_prompt div{
+            text-align: right;
+        }
+
+        .confirm_prompt p{
+            flex: 1;
+        }
+
+        .gray_block{
+            z-index: 1;
+            background-color: rgba(255,255,255, .3);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
 
 
 /* banner ----------------------------------------- */

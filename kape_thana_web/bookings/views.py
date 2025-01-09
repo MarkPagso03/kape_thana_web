@@ -1,22 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import BookingForm
-
-
 import time
 
-# Create your views here.
-def booking(request):
-    return render(request, "booking/booking.html", {'timestamp': time.time()})
 
 def booking(request):
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
-            form.save()  # Saves the data into the database
-            return HttpResponse("Booking successfully saved!")
+            form.save()
+            return render(request, 'home/index.html', {'success': 'success'})
         else:
-            return HttpResponse("Form data is invalid.")
+            return render(request, 'booking/booking.html', {'form': form, 'errors': form.errors})
     else:
         form = BookingForm()
-    return render(request, "booking/booking.html", {'form': form})
+    return render(request, 'booking/booking.html', {'form': form})
+
+def terms_and_condition(request):
+    return render(request, "terms_and_condition/terms_and_condition.html", {'timestamp': time.time()})

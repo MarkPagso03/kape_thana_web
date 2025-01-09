@@ -3,7 +3,17 @@
 {% block link %}
     <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}?v={{ timestamp }}" >
     <link  rel="stylesheet" type="text/css" href="{% static 'home/css/style@mobile.css' %}?v={{ timestamp }}" >
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the success message is set
+            const successMessage = "{{ success|default:'' }}";
+            if (successMessage === "success") {
+                alert("Booking successful! Wait for the staff to contact you.");
+            }
+        });
+    </script>
 {% endblock %}
+
 
 {% block content %}
     <div class="banner">
@@ -142,7 +152,28 @@
         </div>
     </div>
 </div>
-
+        <div class="confirm_prompt" id="confirm_prompt">
+                    <h1>Confirm Booking</h1>
+                    <p>by confirming your booking, our staff will contact you through your facebook for more info.</p>
+                    <div>
+                        <button type="button" >Confirm</button>
+                    </div>
+        </div>
+        <div class="gray_block" id="gray_block"></div>
+        <script>
+            function toggle_prompt() {
+                const element1 = document.getElementById("confirm_prompt");
+                const element2 = document.getElementById("gray_block");
+                if (element2.style.display === "none" || element2.style.display === "") {
+                    element1.style.display = "flex";
+                    element2.style.display = "block";
+                } else {
+                    element1.style.display = "none";
+                    element2.style.display = "none";
+                }
+                console.log("toggle_prompt clicked!");
+            }
+        </script>
 
 
 {% endblock %}
