@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kape-Thana</title>
+    <style>
+
+        body {
+            font-family: Hatton;
+            margin: 0;
+            padding: 0;
+            background-color: #f9e4d3;
+            width: 100%
+        }
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 clamp(4rem, 8vw, 8vw);
+            height: var(--header-height);
+            background-color: rgba(0,0,0, .2);
+            position: absolute;
+            width: calc(100vw - 315px);
+            z-index: 3;
+            height: 70px;
+        }
+
+        .header div{
+            display: flex;
+            align-items: center;
+            }
+
+        .header img{
+            height: 75%;
+        }
+
+        .header h2{
+            margin-left: clamp(2rem, 2vw, 2vw);
+            white-space: no-wrap;
+            color: white;
+            font-family: "DM Serif Display", serif;
+            font-weight: 300;
+            font-size: var(--fsize15);
+            letter-spacing: clamp( .2rem, .2vw, .2vw);
+            text-shadow: 0 0 1px black;
+            }
+
+        .header nav{
+            display: flex;
+            align-items: center;
+        }
+
+        .header nav a{
+            margin: 0 clamp(1rem, 1vw, 1vw);
+            text-decoration: none;
+            color: white;
+            font-size: clamp( .9rem, .9vw, .9vw);
+            font-family: "DM Serif Display", serif;
+            letter-spacing: clamp(.15rem, .15vw, .15vw);
+            text-shadow: 0 0 1px black;
+        }
+        header {
+            position: relative;
+            background: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C') no-repeat center center/cover;
+            color: #f9e4d3;
+            height: 500px;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 5em;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+            color: #f9e4d3;
+        }
+
+        .rooms-section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .room-card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .room-card img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .room-details {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .room-details h2 {
+            margin: 0;
+            font-size: 1.8em;
+            color: #623e2a;
+        }
+
+        .room-details p {
+            margin: 10px 0;
+            font-size: 1em;
+            color: #623e2a;
+        }
+
+        .room-details .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .room-details a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #fff3e9; /* Updated button color */
+            color: #623e2a; /* Text color for the button */
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .room-details a:hover {
+            background-color: #f7d7b5; /* Slightly darker shade for hover */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff3e9; /* Modal box background color */
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+
+        .modal-content p {
+            color: #623e2a; /* Text color inside the modal */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .modal-images img {
+            width: 30%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        footer{
+            height: 70px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+
+        footer p{
+            margin-left: 10vw;
+            font-size: var(--fsize8);
+        }
+    </style>
+</head>
+<body>
+{% load static %}
+<div class="header">
+    <div>
+        <img src="{% static 'home/img/kape-thana_logo.png'%}" alt="Logo">
+        <h2>Kape-thana Beach House</h2>
+    </div>
+    <nav>
+            <a href="/">Home</a>
+            <a href="accomodation">Accomodation</a>
+            <a href="about_us">About Us</a>
+            <a href="news">News</a>
+            <a href="/contact_us">Contact Us</a>
+        </nav>
+</div>
+<header>
+
+    <div class="header-text">
+
+        <h1>OUR ROOMS</h1>
+        <p>Stylish architecture and interiors await every guest. Relax in our modern furnished rooms designed for comfort.</p>
+    </div>
+</header>
+
+<section class="rooms-section">
+    <div class="room-card">
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Deluxe Room">
+        <div class="room-details">
+            <h2>ROOM No. 1</h2>
+            <p>Offers a magnificent view of the ocean and the sunset.</p>
+            <p>One double deck bed and 1 queen size bed.</p>
+            <p>More or less 30 square meters, located at the third floor with own veranda.</p>
+            <p>OCCUPANCY:</p>
+            <p>6 - 8 adults, inclusive of mattress, breakfast, and use of resort amenities.</p>
+            <p class="price">₱ 4,500.00</p>
+            <a onclick="openModal('modal1')">VIEW MORE</a>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Family Suite">
+        <div class="room-details">
+            <h2>ROOM No. 2</h2>
+            <p>Enjoy the view of the garden and pool.</p>
+            <p>One double deck bed.</p>
+            <p>More or less 20 square meters, located at the first floor with own veranda.</p>
+            <p>OCCUPANCY:</p>
+            <p>2 adults, inclusive of mattress, breakfast, and use of resort amenities.</p>
+            <p class="price">₱ 2,000.00</p>
+            <a onclick="openModal('modal2')">VIEW MORE</a>
+        </div>
+    </div>
+</section>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>ROOM No. 1</h2>
+        <div class="modal-images">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea Front Room">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea Front Room Additional Image">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea Front Room Extra Image">
+        </div>
+        <p>The ROOM No. 1 offers breathtaking ocean views, complete with modern amenities and a cozy ambiance. Perfect for families or groups looking for a luxurious getaway.</p>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>ROOM No. 2</h2>
+        <div class="modal-images">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea View Room">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea View Room Additional Image">
+            <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/461459937_872833694661539_3023432109278623652_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeE6VsQFUVHpC7ZIsuXhqqEKL6d1IGD62Ecvp3UgYPrYR2QL9yYD4FSHQtK7ihRah3vSsODGD2rY-aPplt4gIyE8&_nc_ohc=GhyScSUjEC4Q7kNvgH_K6TN&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1gFRJq6D1VMmx8xh9CJoEWnTEPmz_m0VSk7LW9NBHODyQw&oe=67A8059C" alt="Sea View Room Extra Image">
+        </div>
+        <p>The ROOM No. 2 is ideal for couples seeking a serene escape. Overlooking the garden and pool, it provides a tranquil and intimate setting.</p>
+    </div>
+</div>
+
+    <footer>
+        <p>copyright &copy; 2024 Kape-thana beach house | powered by web wizard</p>
+    </footer>
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

@@ -177,7 +177,6 @@
             top: 10;
             left: 0;
             width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -316,6 +315,29 @@
 .quick-links a:hover, .information a:hover, .social_media a:hover {
     color: #d4a373;
     text-decoration: underline;
+}
+
+.maps {
+    height: 80%;
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.maps h1{
+    margin: 30px;
+    color: #5e5343;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.maps p{
+    margin: 30px;
+    color: #5e5343;
+    font-weight: light;
+    font-size: 18px;
 }
 
 /* Footer */
