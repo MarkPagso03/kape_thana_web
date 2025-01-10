@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .card-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Booking History</h2>
+        <!-- Example card -->
+        <!-- More cards will go here dynamically -->
+    </div>
+
+    <!-- Optional JavaScript for dynamically fetching data -->
+    <script>
+        async function fetchHistory() {
+            const response = await fetch('/booking/api/HistoryListView/'); // Replace with your API endpoint
+            const data = await response.json();
+
+            const container = document.querySelector('.container');
+            data.forEach(booking => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <div class="card-header">${booking.full_name}</div>
+                    <p><strong>Mobile Number:</strong> ${booking.mobile_number || 'N/A'}</p>
+                    <p><strong>Email:</strong> ${booking.email || 'N/A'}</p>
+                    <p><strong>Facebook Username:</strong> ${booking.fb_username || 'N/A'}</p>
+                    <p><strong>Check-In Date:</strong> ${booking.check_in}</p>
+                    <p><strong>Check-Out Date:</strong> ${booking.check_out || 'N/A'}</p>
+                    <p><strong>Number of Guests:</strong> ${booking.guests}</p>
+                    <p><strong>Created At:</strong> ${booking.created_at}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Call the function to fetch and display data
+        fetchHistory();
+    </script>
+</body>
+</html>

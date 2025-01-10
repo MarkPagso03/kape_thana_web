@@ -4,7 +4,7 @@ from .models import Booking
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['full_name', 'mobile_number', 'email', 'fb_username', 'check_in', 'check_out', 'guests', 'room_no', 'accepted']
+        fields = ['full_name', 'mobile_number', 'email', 'fb_username', 'check_in', 'check_out', 'guests', 'accepted']
 
     def clean(self):
         cleaned_data = super().clean()

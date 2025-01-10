@@ -15,9 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponse
 from django.urls import path, include
 
+@staff_member_required
+def custom_admin_view(request):
+    return HttpResponse("This is a custom view inside the admin panel!")
+
 urlpatterns = [
+    path('admin/custom-view/', custom_admin_view, name='custom_admin_view'),
     path('admin/', admin.site.urls),
     path('', include('home.urls'), name="index"),
     path('booking/', include('bookings.urls')),
