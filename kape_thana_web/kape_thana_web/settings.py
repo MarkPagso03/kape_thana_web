@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-qx)o8#-&m(4lj9hvphfymleo8k$mvsdtaj_10z8t4n6doq7n=o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.4', '192.168.0.113']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.4', '192.168.0.113', '*', 'aeromaster.local']
 
 # Application definition
 

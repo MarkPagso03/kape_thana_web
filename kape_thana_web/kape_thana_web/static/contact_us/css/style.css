@@ -291,3 +291,27 @@ footer p {
     margin-left: 10vw;
     font-size: var(--fsize8);
 }
+
+
+.maps {
+    height: 80%;
+    width: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+}
+
+.maps h1{
+    margin: 30px;
+    color: #5e5343;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.maps p{
+    margin: 30px;
+    color: #5e5343;
+    font-weight: light;
+    font-size: 18px;
+}

@@ -7,7 +7,6 @@ def current_time_utc_plus_8():
     local_timezone = timezone('Asia/Singapore')
     local_time = now().astimezone(local_timezone)
     clean_local_time = local_time.strftime('%Y-%m-%d %H:%M:%S')
-    print(clean_local_time)
     return clean_local_time
 
 

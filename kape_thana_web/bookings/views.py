@@ -97,13 +97,13 @@ def update_or_delete_booking(request):
             booking = Booking.objects.get(id=booking_id)
             booking.accepted += 1
             booking.save()
-            return JsonResponse({'success': True, 'message': 'Booking accepted!'})
+            return JsonResponse({'success': True, 'message': 'Done!'})
 
         elif action == 'reject':
             # Delete the booking
             booking = Booking.objects.get(id=booking_id)
             booking.delete()
-            return JsonResponse({'success': True, 'message': 'Booking rejected and deleted!'})
+            return JsonResponse({'success': True, 'message': 'Book rejected and deleted!'})
 
         else:
             return JsonResponse({'success': False, 'message': 'Invalid action!'}, status=400)
