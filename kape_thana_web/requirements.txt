@@ -5,3 +5,4 @@ legacy~=0.1.7
 pip~=24.3.1
 sqlparse~=0.5.2
 tzdata~=2024.2
+pytz
